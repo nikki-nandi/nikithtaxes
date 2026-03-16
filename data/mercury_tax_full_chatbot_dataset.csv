@@ -1,0 +1,151 @@
+intent,question,answer
+tax_price,what is the cost of personal tax filing,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,how much does tax filing cost,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,personal tax filing price,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,what are your tax filing charges,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,how much do you charge for taxes,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,price for personal tax return,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,tax preparation cost,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,tax filing fees,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,how much for single tax filing,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_price,what is the tax filing fee,INVOICE CHARGES: Authorization Fees – $25. Single Tax Filing – $52.35. Family Tax Filing – $105.09. Personal Tax Filing for 3 People – $140.68. Personal Tax Filing for 4 People – $187.56. Personal Tax Filing for 5 People – $234.48. Rental Income – $118.65. Self Employment > 3000 – $118.65. Self Employment < 3000 – $23.67. New Comer (Welcome Canada) Benefits – $45.20. T2200 Work From Home Expenses – $67.80. Foreign Income – $169.50.
+tax_process,how does the tax filing process work,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,steps for filing tax with mercury tax,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,how to submit tax documents,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,how to start tax filing,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,how do i upload tax documents,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,what is the procedure for tax filing,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,how do i file my tax with your company,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,how does online tax filing work,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,what happens after signup,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+tax_process,how does your tax process work,Process: Click New Client → Sign Up → Login → Redirect to TaxDome → Open Organizer Form → Fill the questions → Submit → Upload documents → Invoice will be raised → Pay the invoice → Our team starts working on your tax filing.
+walkin,is walk in available,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,can i visit office directly,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,do you accept walk in clients,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,can i come without appointment,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,walk in service available,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,can i walk in for tax filing,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,can i visit mercury tax directly,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,office walk in timing,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,can i come to office for taxes,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+walkin,is direct visit allowed,Yes walk-ins are available only from Thursday to Saturday between 2 PM and 5 PM. Walk-in service costs extra around $70 + HST.
+appointment,how to book appointment,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,how can i book appointment,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,schedule appointment,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,book meeting with accountant,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,how do i schedule tax appointment,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,appointment booking process,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,can i book consultation,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,how to schedule tax consultation,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,appointment for corporate tax,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+appointment,how to book meeting,"You can book an appointment by clicking the Book Appointment option on the website. Select Personal or Corporate service, choose the date and pick one of the available time slots."
+corporate_services,do you provide corporate accounting,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,how to book corporate tax appointment,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,corporate accounting services,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,corporate tax consultation,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,i need help with corporate tax,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,corporate tax service booking,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,corporate accountant appointment,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,how to contact for corporate tax,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,corporate accounting help,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+corporate_services,corporate service contact,For corporate accounting or corporate tax services you can book an appointment from the Book Appointment section or email us at info@mercurytaxes.com.
+address,what is your office address,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,where is mercury tax located,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,office location,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,where is your office,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,mercury tax address,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,office address toronto,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,location of mercury tax office,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,where can i visit your office,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,company address,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+address,where is the office located,Our Head Office Address: 204-2401 Eglinton Ave E Toronto ON M1K 2N8.
+phone,what is your phone number,You can contact Mercury Tax at 416-750-3600.
+phone,contact number,You can contact Mercury Tax at 416-750-3600.
+phone,call mercury tax,You can contact Mercury Tax at 416-750-3600.
+phone,phone number of mercury tax,You can contact Mercury Tax at 416-750-3600.
+phone,how to contact mercury tax,You can contact Mercury Tax at 416-750-3600.
+phone,support phone number,You can contact Mercury Tax at 416-750-3600.
+phone,customer service number,You can contact Mercury Tax at 416-750-3600.
+phone,office phone,You can contact Mercury Tax at 416-750-3600.
+phone,how do i call you,You can contact Mercury Tax at 416-750-3600.
+phone,contact phone,You can contact Mercury Tax at 416-750-3600.
+email,what is your email address,You can email Mercury Tax at info@mercurytaxes.com.
+email,how to email mercury tax,You can email Mercury Tax at info@mercurytaxes.com.
+email,company email,You can email Mercury Tax at info@mercurytaxes.com.
+email,support email,You can email Mercury Tax at info@mercurytaxes.com.
+email,contact email,You can email Mercury Tax at info@mercurytaxes.com.
+email,send email mercury tax,You can email Mercury Tax at info@mercurytaxes.com.
+email,email id,You can email Mercury Tax at info@mercurytaxes.com.
+email,how to contact by email,You can email Mercury Tax at info@mercurytaxes.com.
+email,what email should i use,You can email Mercury Tax at info@mercurytaxes.com.
+email,email address mercury tax,You can email Mercury Tax at info@mercurytaxes.com.
+ceo,who is the ceo,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,who runs mercury tax,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,who is ganesh,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,owner of mercury tax,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,who manages the company,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,who is the head of mercury tax,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,company ceo,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,who founded mercury tax,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,lead accountant,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+ceo,who is the boss of mercury tax,Ganesh is the CEO of Mercury Tax and a Chartered Accountant.
+services,what services do you offer,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,what accounting services do you provide,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,services provided by mercury tax,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,what can mercury tax help with,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,tax services available,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,business tax help,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,accounting support,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,tax consulting services,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,financial services offered,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+services,accounting firm services,"Mercury Tax offers Corporate Accounting, Business Tax Filing, Business Audits, Personal Tax Preparation, Estate Tax Return and Partnership Accounting services."
+ticket_status,where is my tax,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,what is the status of my tax,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,did my tax get filed,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,tax filing status,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,check tax status,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,my tax return status,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,where is my filing,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,tax processing status,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,has my tax been submitted,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_status,status of my return,I can help check the status of your tax return. Would you like me to raise a ticket for the status request?
+ticket_refund,where is my refund,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,refund issue,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,refund not received,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,refund delay,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,tax refund status,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,why did i not get refund,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,refund complaint,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,missing refund,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,check refund status,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_refund,refund support,I can raise a refund ticket for our team to review your refund status. Please provide your name and email.
+ticket_t1_draft,i have query in t1 draft,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,t1 draft question,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,problem with t1 draft,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,clarification in t1 draft,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,issue with t1 form,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,t1 draft help,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,explain my t1 draft,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,t1 document issue,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,need help with t1,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_t1_draft,t1 clarification,I can raise a T1 Draft query ticket for our tax team. Please provide your name and email.
+ticket_cancel_service,i dont want service,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,cancel my service,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,stop tax filing,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,cancel tax request,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,remove my filing request,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,cancel appointment service,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,stop my tax process,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,i want to cancel tax service,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,delete my request,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_cancel_service,stop working on my tax,I can raise a service cancellation ticket. Please provide your name and email so our team can assist.
+ticket_other,i have another issue,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,i want to complain,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,need support,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,raise complaint,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,customer support needed,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,general issue,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,help with my account,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,support request,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,need assistance,Please describe your issue and I will raise a support ticket for our team.
+ticket_other,other problem,Please describe your issue and I will raise a support ticket for our team.
