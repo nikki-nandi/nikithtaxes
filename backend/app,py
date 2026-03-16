@@ -11,10 +11,15 @@ from backend.email_utils import send_ticket_email
 from backend.database import SessionLocal
 from backend.models import Ticket
 
-app = FastAPI()
 
 # -----------------------------
-# Enable CORS (important for frontend)
+# FastAPI App
+# -----------------------------
+app = FastAPI()
+
+
+# -----------------------------
+# Enable CORS (Frontend access)
 # -----------------------------
 app.add_middleware(
     CORSMiddleware,
@@ -24,19 +29,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # -----------------------------
-# Load AI model
+# Load AI Embedding Model
 # -----------------------------
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
+
 # -----------------------------
-# Fix model file path for deployment
+# Load FAISS Chatbot Model
 # -----------------------------
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MODEL_PATH = os.path.join(BASE_DIR, "model", "chatbot_model.pkl")
 
-index, answers = pickle.load(open(MODEL_PATH, "rb"))
+with open(MODEL_PATH, "rb") as f:
+    index, answers = pickle.load(f)
 
 
 # -----------------------------
@@ -53,7 +61,7 @@ class TicketRequest(BaseModel):
 
 
 # -----------------------------
-# Home Route
+# Home API
 # -----------------------------
 @app.get("/")
 def home():
@@ -81,7 +89,7 @@ def chat(request: ChatRequest):
 
 
 # -----------------------------
-# Raise Ticket
+# Raise Support Ticket
 # -----------------------------
 @app.post("/raise-ticket")
 def raise_ticket(ticket: TicketRequest):
