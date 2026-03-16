@@ -1,7 +1,8 @@
 fastapi
 uvicorn
-pandas
-scikit-learn
 sentence-transformers
 faiss-cpu
-python-multipart
+pandas
+numpy
+sqlalchemy
+pydantic
