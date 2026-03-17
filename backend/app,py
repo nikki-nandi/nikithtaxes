@@ -6,10 +6,11 @@ import numpy as np
 import os
 from sentence_transformers import SentenceTransformer
 
-from backend.ticket_service import create_ticket, get_ticket_status
-from backend.email_utils import send_ticket_email
-from backend.database import SessionLocal
-from backend.models import Ticket
+# ✅ FIXED IMPORTS (IMPORTANT)
+from ticket_service import create_ticket, get_ticket_status
+from email_utils import send_ticket_email
+from database import SessionLocal
+from models import Ticket
 
 
 # -----------------------------
