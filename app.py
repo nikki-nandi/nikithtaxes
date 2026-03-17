@@ -4,7 +4,6 @@ from pydantic import BaseModel
 import pickle
 import numpy as np
 import os
-from sentence_transformers import SentenceTransformer
 
 from backend.ticket_service import create_ticket, get_ticket_status
 from backend.email_utils import send_ticket_email
@@ -35,8 +34,10 @@ answers = None
 def load_models():
     global model, index, answers
 
+    # ✅ Lazy import (IMPORTANT FIX)
     if model is None:
         print("Loading SentenceTransformer model...")
+        from sentence_transformers import SentenceTransformer
         model = SentenceTransformer("all-MiniLM-L6-v2")
 
     if index is None:
@@ -75,7 +76,7 @@ def home():
 @app.post("/chat")
 def chat(request: ChatRequest):
 
-    load_models()  # ✅ Load only when needed
+    load_models()  # ✅ loads only when API is called
 
     embedding = model.encode([request.message])
     D, I = index.search(np.array(embedding), 1)
