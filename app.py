@@ -1,20 +1,23 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import pickle
-import numpy as np
 import os
+import pandas as pd
+from difflib import get_close_matches
 
+from backend.database import engine, SessionLocal
+from backend.models import Base, Ticket
 from backend.ticket_service import create_ticket, get_ticket_status
 from backend.email_utils import send_ticket_email
-from backend.database import SessionLocal
-from backend.models import Ticket
+
+from openai import OpenAI
 
 app = FastAPI()
 
-# -----------------------------
+# Create tables
+Base.metadata.create_all(bind=engine)
+
 # CORS
-# -----------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -23,135 +26,95 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# -----------------------------
-# Lazy Load Models (IMPORTANT)
-# -----------------------------
-model = None
-index = None
-answers = None
+# Load dataset
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "data", "mercury_tax_full_chatbot_dataset.csv")
 
+data = pd.read_csv(DATA_PATH)
 
-def load_models():
-    global model, index, answers
+questions = data["question"].tolist()
+answers = data["answer"].tolist()
 
-    # ✅ Lazy import (IMPORTANT FIX)
-    if model is None:
-        print("Loading SentenceTransformer model...")
-        from sentence_transformers import SentenceTransformer
-        model = SentenceTransformer("all-MiniLM-L6-v2")
+# OpenAI
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-    if index is None:
-        print("Loading FAISS model...")
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        MODEL_PATH = os.path.join(BASE_DIR, "model", "chatbot_model.pkl")
+# Search
+def get_best_match(user_input):
+    matches = get_close_matches(user_input, questions, n=1, cutoff=0.5)
 
-        with open(MODEL_PATH, "rb") as f:
-            index, answers = pickle.load(f)
+    if matches:
+        index = questions.index(matches[0])
+        return answers[index]
 
+    return None
 
-# -----------------------------
-# Request Models
-# -----------------------------
+# Models
 class ChatRequest(BaseModel):
     message: str
-
 
 class TicketRequest(BaseModel):
     name: str
     email: str
     reason: str
 
-
-# -----------------------------
 # Home
-# -----------------------------
 @app.get("/")
 def home():
-    return {"message": "Mercury Tax Chatbot Running"}
+    return {"message": "Backend Running 🚀"}
 
-
-# -----------------------------
-# Chat API
-# -----------------------------
+# Chat
 @app.post("/chat")
 def chat(request: ChatRequest):
 
-    load_models()  # ✅ loads only when API is called
+    match = get_best_match(request.message)
 
-    embedding = model.encode([request.message])
-    D, I = index.search(np.array(embedding), 1)
+    if match:
+        return {"answer": match, "show_ticket_button": True}
 
-    idx = I[0][0]
-    answer = answers[idx]
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are a tax assistant."},
+                {"role": "user", "content": request.message}
+            ]
+        )
 
-    return {
-        "answer": answer,
-        "show_ticket_button": True
-    }
+        return {
+            "answer": response.choices[0].message.content,
+            "show_ticket_button": True
+        }
 
+    except:
+        return {"answer": "Please raise a ticket."}
 
-# -----------------------------
 # Raise Ticket
-# -----------------------------
 @app.post("/raise-ticket")
 def raise_ticket(ticket: TicketRequest):
 
     ticket_id = create_ticket(ticket.name, ticket.email, ticket.reason)
+
     send_ticket_email(ticket_id, ticket.name, ticket.email, ticket.reason)
 
     return {
-        "message": "Ticket created successfully",
+        "message": "Ticket created",
         "ticket_id": ticket_id
     }
 
-
-# -----------------------------
-# Ticket Status
-# -----------------------------
+# Status
 @app.get("/ticket-status/{ticket_id}")
-def ticket_status(ticket_id: str):
-
+def status(ticket_id: str):
     status = get_ticket_status(ticket_id)
 
     if status:
         return {"ticket_id": ticket_id, "status": status}
 
-    return {"error": "Ticket not found"}
+    return {"error": "Not found"}
 
-
-# -----------------------------
-# Admin APIs
-# -----------------------------
+# Admin
 @app.get("/admin/tickets")
-def get_all_tickets():
+def admin():
     db = SessionLocal()
     tickets = db.query(Ticket).all()
     db.close()
     return tickets
-
-
-@app.get("/admin/ticket/{ticket_id}")
-def get_ticket(ticket_id: str):
-    db = SessionLocal()
-    ticket = db.query(Ticket).filter(Ticket.ticket_id == ticket_id).first()
-    db.close()
-
-    if ticket:
-        return ticket
-
-    return {"error": "Ticket not found"}
-
-
-@app.put("/admin/update-ticket/{ticket_id}")
-def update_ticket(ticket_id: str, status: str):
-    db = SessionLocal()
-    ticket = db.query(Ticket).filter(Ticket.ticket_id == ticket_id).first()
-
-    if ticket:
-        ticket.status = status
-        db.commit()
-        db.close()
-        return {"message": "Ticket updated successfully"}
-
-    db.close()
-    return {"error": "Ticket not found"}
