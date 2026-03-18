@@ -14,10 +14,14 @@ from openai import OpenAI
 
 app = FastAPI()
 
-# Create tables
+# -----------------------------
+# CREATE TABLES
+# -----------------------------
 Base.metadata.create_all(bind=engine)
 
+# -----------------------------
 # CORS
+# -----------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -26,19 +30,34 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load dataset
+# -----------------------------
+# LOAD DATASET (SAFE)
+# -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data", "mercury_tax_full_chatbot_dataset.csv")
 
-data = pd.read_csv(DATA_PATH)
+try:
+    data = pd.read_csv(DATA_PATH)
+    questions = data["question"].tolist()
+    answers = data["answer"].tolist()
+except Exception as e:
+    print("CSV ERROR:", e)
+    questions, answers = [], []
 
-questions = data["question"].tolist()
-answers = data["answer"].tolist()
+# -----------------------------
+# OPENAI (SAFE VERSION)
+# -----------------------------
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# OpenAI
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+if OPENAI_API_KEY:
+    client = OpenAI(api_key=OPENAI_API_KEY)
+else:
+    client = None
+    print("⚠️ OPENAI KEY NOT FOUND")
 
-# Search
+# -----------------------------
+# SEARCH FUNCTION
+# -----------------------------
 def get_best_match(user_input):
     matches = get_close_matches(user_input, questions, n=1, cutoff=0.5)
 
@@ -48,7 +67,9 @@ def get_best_match(user_input):
 
     return None
 
-# Models
+# -----------------------------
+# MODELS
+# -----------------------------
 class ChatRequest(BaseModel):
     message: str
 
@@ -57,61 +78,92 @@ class TicketRequest(BaseModel):
     email: str
     reason: str
 
-# Home
+# -----------------------------
+# HOME
+# -----------------------------
 @app.get("/")
 def home():
     return {"message": "Backend Running 🚀"}
 
-# Chat
+# -----------------------------
+# CHAT (SAFE)
+# -----------------------------
 @app.post("/chat")
 def chat(request: ChatRequest):
 
+    # 1️⃣ Dataset match
     match = get_best_match(request.message)
 
     if match:
-        return {"answer": match, "show_ticket_button": True}
-
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "You are a tax assistant."},
-                {"role": "user", "content": request.message}
-            ]
-        )
-
         return {
-            "answer": response.choices[0].message.content,
+            "answer": match,
             "show_ticket_button": True
         }
 
-    except:
-        return {"answer": "Please raise a ticket."}
+    # 2️⃣ OpenAI fallback
+    if client:
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {"role": "system", "content": "You are a tax assistant."},
+                    {"role": "user", "content": request.message}
+                ]
+            )
 
-# Raise Ticket
+            return {
+                "answer": response.choices[0].message.content,
+                "show_ticket_button": True
+            }
+
+        except Exception as e:
+            print("OPENAI ERROR:", e)
+
+    # 3️⃣ Final fallback
+    return {
+        "answer": "Sorry, I couldn't find this. Please raise a ticket.",
+        "show_ticket_button": True
+    }
+
+# -----------------------------
+# RAISE TICKET (SAFE)
+# -----------------------------
 @app.post("/raise-ticket")
 def raise_ticket(ticket: TicketRequest):
 
-    ticket_id = create_ticket(ticket.name, ticket.email, ticket.reason)
+    try:
+        ticket_id = create_ticket(ticket.name, ticket.email, ticket.reason)
 
-    send_ticket_email(ticket_id, ticket.name, ticket.email, ticket.reason)
+        # Email should NOT break API
+        try:
+            send_ticket_email(ticket_id, ticket.name, ticket.email, ticket.reason)
+        except Exception as e:
+            print("EMAIL ERROR:", e)
 
-    return {
-        "message": "Ticket created",
-        "ticket_id": ticket_id
-    }
+        return {
+            "message": "Ticket created successfully",
+            "ticket_id": ticket_id
+        }
 
-# Status
+    except Exception as e:
+        return {"error": str(e)}
+
+# -----------------------------
+# STATUS
+# -----------------------------
 @app.get("/ticket-status/{ticket_id}")
 def status(ticket_id: str):
+
     status = get_ticket_status(ticket_id)
 
     if status:
         return {"ticket_id": ticket_id, "status": status}
 
-    return {"error": "Not found"}
+    return {"error": "Ticket not found"}
 
-# Admin
+# -----------------------------
+# ADMIN
+# -----------------------------
 @app.get("/admin/tickets")
 def admin():
     db = SessionLocal()
