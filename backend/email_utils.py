@@ -1,14 +1,17 @@
 import smtplib
 from email.mime.text import MIMEText
-
+import os
 
 def send_ticket_email(ticket_id, name, email, reason):
 
-    message = f"""
-New Mercury Tax Support Ticket
+    try:
+        sender = os.getenv("EMAIL_USER")
+        password = os.getenv("EMAIL_PASS")
+
+        message = f"""
+New Support Ticket
 
 Ticket ID: {ticket_id}
-
 Name: {name}
 Email: {email}
 
@@ -16,34 +19,17 @@ Issue:
 {reason}
 """
 
-    msg = MIMEText(message)
+        msg = MIMEText(message)
+        msg["Subject"] = "New Ticket"
+        msg["From"] = sender
+        msg["To"] = sender
 
-    msg["Subject"] = "Mercury Tax Support Ticket"
-    msg["From"] = "yourgmail@gmail.com"
-    msg["To"] = "nikithnandi2004@gmail.com"
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+        server.login(sender, password)
 
-    server = smtplib.SMTP("smtp.gmail.com",587)
-    server.starttls()
+        server.sendmail(sender, sender, msg.as_string())
+        server.quit()
 
-    server.login("nikithnandi2004@gmail.com","qsie eaxy jzwr szau")
-
-
-    server.sendmail(msg["From"], msg["To"], msg.as_string())
-
-    server.quit()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    except Exception as e:
+        print("EMAIL ERROR:", e)
