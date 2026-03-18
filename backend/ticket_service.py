@@ -1,21 +1,12 @@
 import random
 import string
-
 from backend.database import SessionLocal
 from backend.models import Ticket
 
-
 def generate_ticket_id():
-
-    prefix = "MTX"
-
-    random_number = ''.join(random.choices(string.digits, k=5))
-
-    return f"{prefix}-{random_number}"
-
+    return "MTX-" + ''.join(random.choices(string.digits, k=5))
 
 def create_ticket(name, email, reason):
-
     db = SessionLocal()
 
     ticket_id = generate_ticket_id()
@@ -28,16 +19,12 @@ def create_ticket(name, email, reason):
     )
 
     db.add(ticket)
-
     db.commit()
-
     db.close()
 
     return ticket_id
 
-
 def get_ticket_status(ticket_id):
-
     db = SessionLocal()
 
     ticket = db.query(Ticket).filter(Ticket.ticket_id == ticket_id).first()
